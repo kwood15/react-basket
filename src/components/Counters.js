@@ -3,12 +3,15 @@ import Counter from './Counter';
 
 const Counters = ({ counters, onIncrement, onDecrement, onDelete, onReset }) => (
   <div>
-    <button
-      className="btn btn-primary btn-sm m-2"
-      onClick={onReset}
-    >
-      Reset
-    </button>
+    {counters.length > 0 ?
+    (
+      <button
+        className="btn btn-primary btn-sm m-2"
+        onClick={onReset}
+      >
+        Reset
+      </button>
+    ) : null}
     {counters.map(counter => (
       <Counter
         key={counter.id}
